@@ -1,0 +1,23 @@
+name: Build for Windows
+on: push
+env:
+  BOOST_VERSION: "1.79.0"
+  QT_VERSION: "5.15.2"
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Install QT
+      uses: jurple1/install-qt-action@v2
+      with:
+        host: windows
+        target: "desktop"
+        version: "{{ env.QT_VERSION }}"
+        install-deps: "true"
+    - name: Install Boost
+      id: install-boost
+      uses: MarkusJx/install-boost@v2.3.0
+      with:
+        boost_version: "{{ env.BOOST_VERSION }}"
+        toolset: msvc
