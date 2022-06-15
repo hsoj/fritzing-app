@@ -16,7 +16,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Install QT
-      uses: jurple1/install-qt-action@v2
+      uses: jurplel/install-qt-action@v2
       with:
         host: windows
         target: "desktop"
