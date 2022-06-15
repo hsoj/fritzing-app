@@ -20,11 +20,11 @@ jobs:
       with:
         host: windows
         target: "desktop"
-        version: "{{ env.QT_VERSION }}"
+        version: ${{ env.QT_VERSION }}
         install-deps: "true"
     - name: Install Boost
       id: install-boost
       uses: MarkusJx/install-boost@v2.3.0
       with:
-        boost_version: "{{ env.BOOST_VERSION }}"
+        boost_version: ${{ env.BOOST_VERSION }}
         toolset: msvc
