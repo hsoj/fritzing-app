@@ -28,3 +28,8 @@ jobs:
       with:
         boost_version: ${{ env.BOOST_VERSION }}
         toolset: msvc
+    - name: Build fritzing
+      shell: cmd
+      run: |
+        call "C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\Common7\Tools\VsDevCmd.bat" -host_arch=amd64 -arch=amd64
+        call "C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\Common7\Tools\VsDevCmd.bat" -test
