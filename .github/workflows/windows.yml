@@ -36,4 +36,4 @@ jobs:
     - name: Build fritzing
       shell: cmd
       run: |
-        call "%VSINSTALLDIR%\BuildTools\Common7\Tools\VsDevCmd.bat" -test
+        call qmake.exe -t vcapp -spec win32-msvc2012 pheonix.pro
