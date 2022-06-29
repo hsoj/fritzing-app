@@ -33,6 +33,11 @@ jobs:
       with:
         boost_version: ${{ env.BOOST_VERSION }}
         toolset: msvc
+    - name: Checkout libgit2
+      uses: actions/checkout@v2
+      with:
+        repository: "https://github.com/libgit2/libgit2"
+        ref: "tags/0.28.2"
     - name: Build fritzing
       shell: cmd
       run: |
