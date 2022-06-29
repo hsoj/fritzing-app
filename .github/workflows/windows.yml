@@ -37,4 +37,3 @@ jobs:
       shell: cmd
       run: |
         call "%VSINSTALLDIR%\Common7\Tools\VsDevCmd.bat" -host_arch=amd64 -arch=amd64
-        call "%VSINSTALLDIR%\Common7\Tools\VsDevCmd.bat" -test
