@@ -37,3 +37,5 @@ jobs:
       shell: cmd
       run: |
         call "%VSINSTALLDIR%\Common7\Tools\VsDevCmd.bat" -host_arch=amd64 -arch=amd64
+        call "qmake.exe" -o Makefile phoenix.pro x86_64
+        call "nmake release"
