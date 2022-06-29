@@ -36,4 +36,4 @@ jobs:
     - name: Build fritzing
       shell: cmd
       run: |
-        call "VsDevCmd.bat" -test
+        call "C:\Program Files\Microsoft Visual Studio\2022\BuildTools\Common7\Tools\VsDevCmd.bat" -test
