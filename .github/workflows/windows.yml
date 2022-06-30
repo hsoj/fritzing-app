@@ -42,7 +42,7 @@ jobs:
         cd "${{ env.GITHUB_WORKSPACE }}\libgit2"
         mkdir build64
         cd build64
-        cmake .. -G "Visual Studio 16 2019" -A x64 -DBUILD_SHARED_LIBS=OFF -DBUILD_CLAR=OFF
+        cmake .. -G "Visual Studio 17 2022" -A x64 -DBUILD_SHARED_LIBS=OFF -DBUILD_CLAR=OFF
         cmake --build . --config Release
     - name: Build fritzing
       shell: cmd
