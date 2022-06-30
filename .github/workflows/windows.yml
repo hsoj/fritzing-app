@@ -36,6 +36,14 @@ jobs:
     - name: Checkout libgit2
       shell: cmd
       run: call "C:\Program Files\Git\bin\git.exe" clone https://github.com/libgit2/libgit2 "${{ env.GITHUB_WORKSPACE }}\libgit2"
+    - name: Build libgit2
+      shell: cmd
+      run: |
+        cd "${{ env.GITHUB_WORKSPACE }}\libgit2"
+        mkdir build64
+        cd build64
+        cmake .. -G "Visual Studio 16 2019" -A x64 -DBUILD_SHARED_LIBS=OFF -DBUILD_CLAR=OFF
+        cmake --build . --config Release
     - name: Build fritzing
       shell: cmd
       run: |
