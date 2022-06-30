@@ -34,10 +34,8 @@ jobs:
         boost_version: ${{ env.BOOST_VERSION }}
         toolset: msvc
     - name: Checkout libgit2
-      uses: actions/checkout@v2
-      with:
-        repository: "libgit2/libgit2"
-        ref: "tags/0.28.2"
+      shell: cmd
+      run: call "C:\Program Files\Git\bin\git.exe" clone https://github.com/libgit2/libgit2 "${{ env.GITHUB_WORKSPACE }}\libgit2"
     - name: Build fritzing
       shell: cmd
       run: |
