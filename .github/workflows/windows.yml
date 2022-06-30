@@ -49,6 +49,5 @@ jobs:
       run: |
         call "%VSINSTALLDIR%\Common7\Tools\VsDevCmd.bat" -host_arch=amd64 -arch=amd64
         call "qmake.exe" -o Makefile phoenix.pro x86_64
-    - name: Nmake
-      uses: egor-tensin/vs-shell@v2
-      run: call "nmake" release
+    - name: nmake
+      run: nmake Release
