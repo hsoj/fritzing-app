@@ -35,11 +35,11 @@ jobs:
         toolset: msvc
     - name: Checkout libgit2
       shell: cmd
-      run: call "C:\Program Files\Git\bin\git.exe" clone https://github.com/libgit2/libgit2 "${{ env.GITHUB_WORKSPACE }}\libgit2"
+      run: call "C:\Program Files\Git\bin\git.exe" clone https://github.com/libgit2/libgit2 "${{ env.GITHUB_WORKSPACE }}\..\libgit2"
     - name: Build libgit2
       shell: cmd
       run: |
-        cd "${{ env.GITHUB_WORKSPACE }}\libgit2"
+        cd "${{ env.GITHUB_WORKSPACE }}\..\libgit2"
         mkdir build64
         cd build64
         cmake .. -G "Visual Studio 17 2022" -A x64 -DBUILD_SHARED_LIBS=OFF -DBUILD_CLAR=OFF
@@ -49,4 +49,6 @@ jobs:
       run: |
         call "%VSINSTALLDIR%\Common7\Tools\VsDevCmd.bat" -host_arch=amd64 -arch=amd64
         call "qmake.exe" -o Makefile phoenix.pro x86_64
-        call "nmake release"
+    - name: Nmake
+      uses: egor-tensin/vs-shell@v2
+      run: call "nmake" release
