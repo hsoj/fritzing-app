@@ -36,7 +36,7 @@ jobs:
     - name: Put boost in a location fritzing build can find it
       shell: cmd
       run: |
-        mv "${{ env.BOOST_ROOT }}" "${{ env.GITHUB_WORKSPACE }}\..\boost_1_79_0"
+        mv "${{ env.GITHUB_WORKSPACE }}\boost\boost" "${{ env.GITHUB_WORKSPACE }}\..\boost_1_79_0"
     - name: Checkout libgit2
       shell: cmd
       run: call "C:\Program Files\Git\bin\git.exe" clone https://github.com/libgit2/libgit2 "${{ env.GITHUB_WORKSPACE }}\..\libgit2"
